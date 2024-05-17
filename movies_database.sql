@@ -72,11 +72,11 @@ INSERT INTO Movie VALUES(29,'Amelie','romantic comedy',2001,174400000,14);
 INSERT INTO Movie VALUES(30,'The Godfather','crime',1972,250000000,3);
 CREATE TABLE IF NOT EXISTS "Reception" ( 
         "review_id" INTEGER PRIMARY KEY AUTOINCREMENT, 
-        "movies_id" INTEGER NOT NULL, 
+        "movie_id" INTEGER NOT NULL, 
         "reviewer" TEXT, 
         "rating_out_5" REAL, 
         "comment" TEXT, 
-        FOREIGN KEY (movies_id) REFERENCES "Movie"(movie_id)
+        FOREIGN KEY ("movie_id") REFERENCES "Movie"(movie_id)
     );
 INSERT INTO Reception VALUES(1,1,'Nell Minow',4.0,'Thoughtful, intelligent movie for older teens.');
 INSERT INTO Reception VALUES(2,2,'Peter Bradshaw',3.0,'The movie''s most outrageous high-concept moment - the stretch limo, private jet, opera - is pure camp.');
@@ -110,9 +110,9 @@ INSERT INTO Reception VALUES(29,29,'David Stratton',4.5,'With the talented Audre
 INSERT INTO Reception VALUES(30,30,'Danny Leigh',5.0,'As the doomy burnish of Gordon Willis’s photography captures the darkened souls of the Corleones, the effect is flat-out mesmeric.');
 CREATE TABLE IF NOT EXISTS "Award" (
     award_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    movies_id INTEGER,
+    "movie_id" INTEGER,
     award_name TEXT NOT NULL,
-    FOREIGN KEY (movies_id) REFERENCES "Movie"(movie_id) 
+    FOREIGN KEY ("movie_id") REFERENCES "Movie"(movie_id) 
     );
 INSERT INTO Award VALUES(1,1,'Black Reel Awards - Best Supporting Actor');
 INSERT INTO Award VALUES(2,1,'Black Reel Awards - Favorite Actor – Drama');
@@ -546,7 +546,7 @@ INSERT INTO Nationality VALUES(8,'Finland');
 INSERT INTO Nationality VALUES(9,'Australia');
 INSERT INTO Nationality VALUES(10,'Lebanon');
 CREATE TABLE IF NOT EXISTS "Director" (
-    directors_id INTEGER PRIMARY KEY,
+    "director_id" INTEGER PRIMARY KEY,
     name TEXT,
     birth_date INTEGER,
     nationality_id INTEGER,
@@ -555,29 +555,29 @@ CREATE TABLE IF NOT EXISTS "Director" (
     "net_worth (M€)" INTEGER,
     FOREIGN KEY (nationality_id) REFERENCES "Nationality"(nationality_id)
 );
-INSERT INTO Director VALUES(1,'Frank Darabont',1959,5,NULL,183,100);
-INSERT INTO Director VALUES(2,'Garry Marshall',1934,1,'2016-07-19',178,50);
-INSERT INTO Director VALUES(3,'James Cameron',1954,3,NULL,187,800);
-INSERT INTO Director VALUES(4,'Tommy Wiseau',1955,4,NULL,174,4);
-INSERT INTO Director VALUES(5,'Daniel Espinosa',1977,6,NULL,NULL,NULL);
-INSERT INTO Director VALUES(6,'Christopher Nolan',1970,2,NULL,181,250);
-INSERT INTO Director VALUES(7,'Andres Muschietti',1973,7,NULL,188,NULL);
-INSERT INTO Director VALUES(8,'Mark Osborne',1970,1,NULL,188,NULL);
-INSERT INTO Director VALUES(9,'Alfred Hitchcock',1899,2,'1980-04-29',170,200);
-INSERT INTO Director VALUES(10,'Stanley Kubrick',1928,1,'1999-03-07',NULL,20);
-INSERT INTO Director VALUES(11,'Mary Harron',1953,3,NULL,NULL,NULL);
-INSERT INTO Director VALUES(12,'Matti Grönberg',1957,8,NULL,NULL,NULL);
-INSERT INTO Director VALUES(13,'Pekka Karjalainen',1961,8,NULL,NULL,NULL);
-INSERT INTO Director VALUES(14,'Sam Raimi',1959,1,NULL,180,60);
-INSERT INTO Director VALUES(15,'Jon Watts',1981,1,NULL,188,12);
-INSERT INTO Director VALUES(16,'Robert Zemeckis',1952,1,NULL,183,80);
-INSERT INTO Director VALUES(17,'Paul Greengrass',1955,2,NULL,183,20);
-INSERT INTO Director VALUES(18,'Jared Hess',1979,1,NULL,196,10);
-INSERT INTO Director VALUES(19,'Martin Scorsese',1942,1,NULL,163,200);
-INSERT INTO Director VALUES(20,'Lana Wachowski',1965,1,NULL,179,225);
-INSERT INTO Director VALUES(21,'Aku Louhimies',1968,8,NULL,176,NULL);
-INSERT INTO Director VALUES(22,'Jean-Pierre Jeunet',1953,5,NULL,NULL,NULL);
-INSERT INTO Director VALUES(23,'Francis Ford Coppola',1939,1,NULL,182,400);
+INSERT INTO Director VALUES(1,'Frank Darabont','1959-01-28',5,NULL,183,100);
+INSERT INTO Director VALUES(2,'Garry Marshall','1934-11-13',1,'2016-07-19',178,50);
+INSERT INTO Director VALUES(3,'James Cameron','1954-08-16',3,NULL,187,800);
+INSERT INTO Director VALUES(4,'Tommy Wiseau','1955-10-03',4,NULL,174,4);
+INSERT INTO Director VALUES(5,'Daniel Espinosa','1977-04-21',6,NULL,NULL,NULL);
+INSERT INTO Director VALUES(6,'Christopher Nolan','1970-07-30',2,NULL,181,250);
+INSERT INTO Director VALUES(7,'Andres Muschietti','1973-08-26',7,NULL,188,NULL);
+INSERT INTO Director VALUES(8,'Mark Osborne','1970-09-17',1,NULL,188,NULL);
+INSERT INTO Director VALUES(9,'Alfred Hitchcock','1899-08-13',2,'1980-04-29',170,200);
+INSERT INTO Director VALUES(10,'Stanley Kubrick','1928-07-26',1,'1999-03-07',NULL,20);
+INSERT INTO Director VALUES(11,'Mary Harron','1953-01-12',3,NULL,NULL,NULL);
+INSERT INTO Director VALUES(12,'Matti Grönberg','1957-07-19',8,NULL,NULL,NULL);
+INSERT INTO Director VALUES(13,'Pekka Karjalainen','1961-05-13',8,NULL,NULL,NULL);
+INSERT INTO Director VALUES(14,'Sam Raimi','1959-10-23',1,NULL,180,60);
+INSERT INTO Director VALUES(15,'Jon Watts','1981-06-28',1,NULL,188,12);
+INSERT INTO Director VALUES(16,'Robert Zemeckis','1952-05-14',1,NULL,183,80);
+INSERT INTO Director VALUES(17,'Paul Greengrass','1955-08-13',2,NULL,183,20);
+INSERT INTO Director VALUES(18,'Jared Hess','1979-07-18',1,NULL,196,10);
+INSERT INTO Director VALUES(19,'Martin Scorsese','1942-11-17',1,NULL,163,200);
+INSERT INTO Director VALUES(20,'Lana Wachowski','1965-06-21',1,NULL,179,225);
+INSERT INTO Director VALUES(21,'Aku Louhimies','1968-02-23',8,NULL,176,NULL);
+INSERT INTO Director VALUES(22,'Jean-Pierre Jeunet','1953-06-12',5,NULL,NULL,NULL);
+INSERT INTO Director VALUES(23,'Francis Ford Coppola','1939-04-07',1,NULL,182,400);
 CREATE TABLE IF NOT EXISTS "Actor" ( 
     actor_id INTEGER PRIMARY KEY AUTOINCREMENT, 
     name TEXT, 
@@ -588,7 +588,7 @@ CREATE TABLE IF NOT EXISTS "Actor" (
     FOREIGN KEY (nationality_id) REFERENCES "Nationality"(nationality_id)
 );
 INSERT INTO Actor VALUES(1,'Tom Hanks','1956-07-09',1,183,350);
-INSERT INTO Actor VALUES(2,'Julia Roberts','1967-10-28',1,173,2502);
+INSERT INTO Actor VALUES(2,'Julia Roberts','1967-10-28',1,173,250);
 INSERT INTO Actor VALUES(3,'Leonardo Dicaprio','1974-11-11',1,183,300);
 INSERT INTO Actor VALUES(4,'Tommy Wiseau','1955-10-03',4,174,4);
 INSERT INTO Actor VALUES(5,'Sam Worthington','1976-08-02',9,178,30);
@@ -647,41 +647,11 @@ INSERT INTO Movie_actor VALUES(27,21);
 INSERT INTO Movie_actor VALUES(28,22);
 INSERT INTO Movie_actor VALUES(29,23);
 INSERT INTO Movie_actor VALUES(30,24);
-INSERT INTO Movie_actor VALUES(1,1);
-INSERT INTO Movie_actor VALUES(2,2);
-INSERT INTO Movie_actor VALUES(3,3);
-INSERT INTO Movie_actor VALUES(4,4);
-INSERT INTO Movie_actor VALUES(5,5);
-INSERT INTO Movie_actor VALUES(6,6);
-INSERT INTO Movie_actor VALUES(7,7);
-INSERT INTO Movie_actor VALUES(8,8);
-INSERT INTO Movie_actor VALUES(9,9);
-INSERT INTO Movie_actor VALUES(10,10);
-INSERT INTO Movie_actor VALUES(11,11);
-INSERT INTO Movie_actor VALUES(12,12);
-INSERT INTO Movie_actor VALUES(13,13);
-INSERT INTO Movie_actor VALUES(14,14);
-INSERT INTO Movie_actor VALUES(15,15);
-INSERT INTO Movie_actor VALUES(16,15);
-INSERT INTO Movie_actor VALUES(17,17);
-INSERT INTO Movie_actor VALUES(18,18);
-INSERT INTO Movie_actor VALUES(19,1);
-INSERT INTO Movie_actor VALUES(20,1);
-INSERT INTO Movie_actor VALUES(21,1);
-INSERT INTO Movie_actor VALUES(22,9);
-INSERT INTO Movie_actor VALUES(23,18);
-INSERT INTO Movie_actor VALUES(24,19);
-INSERT INTO Movie_actor VALUES(25,3);
-INSERT INTO Movie_actor VALUES(26,20);
-INSERT INTO Movie_actor VALUES(27,21);
-INSERT INTO Movie_actor VALUES(28,22);
-INSERT INTO Movie_actor VALUES(29,23);
-INSERT INTO Movie_actor VALUES(30,24);
 CREATE TABLE IF NOT EXISTS "Movie_director" ( 
     movie_id INTEGER, 
-    directors_id INTEGER, 
+    "director_id" INTEGER, 
     FOREIGN KEY (movie_id) REFERENCES "Movie"(movie_id), 
-    FOREIGN KEY (directors_id) REFERENCES "Director"(directors_id) 
+    FOREIGN KEY ("director_id") REFERENCES "Director"("director_id") 
 );
 INSERT INTO Movie_director VALUES(1,1);
 INSERT INTO Movie_director VALUES(2,2);
