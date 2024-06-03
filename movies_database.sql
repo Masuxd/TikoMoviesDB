@@ -70,7 +70,7 @@ INSERT INTO Movie VALUES(27,'The Matrix','science fiction',1999,467200000,1);
 INSERT INTO Movie VALUES(28,'Tuntematon sotilas','war',2017,13500000,13);
 INSERT INTO Movie VALUES(29,'Amelie','romantic comedy',2001,174400000,14);
 INSERT INTO Movie VALUES(30,'The Godfather','crime',1972,250000000,3);
-CREATE TABLE IF NOT EXISTS "Reception" ( 
+CREATE TABLE IF NOT EXISTS "Review" ( 
         "review_id" INTEGER PRIMARY KEY AUTOINCREMENT, 
         "movie_id" INTEGER NOT NULL, 
         "reviewer" TEXT, 
@@ -78,36 +78,36 @@ CREATE TABLE IF NOT EXISTS "Reception" (
         "comment" TEXT, 
         FOREIGN KEY ("movie_id") REFERENCES "Movie"(movie_id)
     );
-INSERT INTO Reception VALUES(1,1,'Nell Minow',4.0,'Thoughtful, intelligent movie for older teens.');
-INSERT INTO Reception VALUES(2,2,'Peter Bradshaw',3.0,'The movie''s most outrageous high-concept moment - the stretch limo, private jet, opera - is pure camp.');
-INSERT INTO Reception VALUES(3,3,'Kevin Maher',4.0,'... a guilty-pleasure tear-jerker.');
-INSERT INTO Reception VALUES(4,4,'Tony Black',1.0,'Objectively of course it''s beyond terrible but take it as a comedy, you''ll have the greatest time ever.');
-INSERT INTO Reception VALUES(5,5,'Keith Garlington',4.0,'“Avatar” remains a transporting experience – an entertaining blend of old-fashioned adventure and technological wonder.');
-INSERT INTO Reception VALUES(6,6,'Victoria Luxford',1.0,'A case of (the filmmakers) had a character, but didnt quite know what to do with it. I think its quite a messy plot that doesnt always make that much sense A bit different with the horror theme, but nothing special.');
-INSERT INTO Reception VALUES(7,7,'David Stratton',4.5,'This is not only a tremendously exciting space adventure... It''s also a rich and thoughtful meditation on time and space and gravity.');
-INSERT INTO Reception VALUES(8,8,'Sara Michelle Fetters',3.75,'In the end, Muschietti''s film is a big, fat, gorgeously produced love letter to King''s epic novel.');
-INSERT INTO Reception VALUES(9,9,'Chris Hewitt',4.0,'This is the finest DreamWorks Animation effort since the first Shrek');
-INSERT INTO Reception VALUES(10,10,'Adam Kempenaar',4.5,'Once it switches over to us getting inside her head... I started seeing it more as Judy''s story than Scottie''s.');
-INSERT INTO Reception VALUES(11,11,'Jeff Simon',4.0,'It''s a movie with dignity and surprises and before it has finished, it has acquired a good deal of power.');
-INSERT INTO Reception VALUES(12,12,'Trace Thurman',5.0,'What else can be said about Hitch''s masterpiece? It''s a masterpiece!');
-INSERT INTO Reception VALUES(13,13,'Patrick Cavanaugh',5.0,'Stanley Kubrick somehow manages to feel restrained and more ambitious than ever, delivering a harrowing and nightmarish case study in the impact of isolation and familial resentment.');
-INSERT INTO Reception VALUES(14,14,'Peter Travers',4.5,'An uneven movie that nonetheless bristles with stinging wit and exerts a perverse fascination.');
-INSERT INTO Reception VALUES(15,15,'Vartiainen',3.5,'I think the reason why I prefer this film over so many modern day Finnish comedies is the fact that while it contains the same kind of crude humour that relies on characters that act like exaggeratedly mentally handicapped children most of the time, the plot is bizarre enough to keep my interest. Modern Finnish comedies try to draw much of their humour from exaggerated real-life situations, whereas this is almost like an adventure film.');
-INSERT INTO Reception VALUES(16,16,'djb75-1',3.0,'Kummelin Jackpot is a Finnish film starring Heikki Silvennoinen. Heikki plays Pertti ''Pera'' Järvelä a middle aged man, estranged from his wife and daughter, completely broke and a singer in a band that are striving to be mediocre. The band have the chance to create a a cassette of the their songs one of which is “I will stick to you like piles”.');
-INSERT INTO Reception VALUES(17,17,'Nell Minow',4.0,'Fun movie, but may be too intense for younger kids.');
-INSERT INTO Reception VALUES(18,18,'Joseph Garcia',4.0,'If it wasn''t apparent before, it''s super apparent now that Marvel Studios understands their characters better than anyone else does.');
-INSERT INTO Reception VALUES(19,19,'Bob Fenster',5.0,'The best art takes the biggest chances, thereby losing people who can''t stretch with it. Forrest Gump is worth the effort.');
-INSERT INTO Reception VALUES(20,20,'George Perry',4.0,'For much of the time, Hanks is on screen by himself, his only dialogue addressed to an inanimate ball. A lesser performer would have made it an unendurable ordeal.');
-INSERT INTO Reception VALUES(21,21,'Donald Clarke',4.0,'This is what piracy is now really like. In truth, it was probably always like this.');
-INSERT INTO Reception VALUES(22,22,'Marc Savlov',2.5,'As in Napoleon Dynamite, there are catchphrases galore, but precious few that stick with you past the theatre parking lot.');
-INSERT INTO Reception VALUES(23,23,'Peter Bradshaw',4.0,'All of the film''s provocation and jaded sexual politics are flavoured with histrionic cynicism and disillusion.');
-INSERT INTO Reception VALUES(24,24,'Allison Rose',4.5,'Kubrick had a way of making the audience become invested in the characters of his films and created some truly memorable ones.');
-INSERT INTO Reception VALUES(25,25,'Larushka Ivan-Zadeh',4.0,'The film has roused censure for glorifying crime, with scant, awkwardly realised minutes paid to Belfort''s eventual comeuppance. But surely 71-year-old Scorsese, a one-time wannabe priest whose work is preoccupied with morality, did that deliberately?');
-INSERT INTO Reception VALUES(26,26,'Tom Huddleston',5.0,'Damn close to perfect.');
-INSERT INTO Reception VALUES(27,27,'Elvis Mitchell',3.0,'It''s rare, and kind of touching, really, to see a lushly financed studio spectacular work so hard to keep everyone''s attention. And with enough symbolism to keep online chat rooms busier than the day Babylon 5 was cancelled.');
-INSERT INTO Reception VALUES(28,28,'Charlotte Davis',3.5,'Unknown Soldier does not sugar-coat the grind of this kind of warfare, nor the inevitable loss of life that comes with any war, but it also offers moments of respite, levity, and even joy.');
-INSERT INTO Reception VALUES(29,29,'David Stratton',4.5,'With the talented Audrey Tautou in the leading role, Amelie is sheer delight, and will entrance everyone who sees it.');
-INSERT INTO Reception VALUES(30,30,'Danny Leigh',5.0,'As the doomy burnish of Gordon Willis’s photography captures the darkened souls of the Corleones, the effect is flat-out mesmeric.');
+INSERT INTO Review VALUES(1,1,'Nell Minow',4.0,'Thoughtful, intelligent movie for older teens.');
+INSERT INTO Review VALUES(2,2,'Peter Bradshaw',3.0,'The movie''s most outrageous high-concept moment - the stretch limo, private jet, opera - is pure camp.');
+INSERT INTO Review VALUES(3,3,'Kevin Maher',4.0,'... a guilty-pleasure tear-jerker.');
+INSERT INTO Review VALUES(4,4,'Tony Black',1.0,'Objectively of course it''s beyond terrible but take it as a comedy, you''ll have the greatest time ever.');
+INSERT INTO Review VALUES(5,5,'Keith Garlington',4.0,'“Avatar” remains a transporting experience – an entertaining blend of old-fashioned adventure and technological wonder.');
+INSERT INTO Review VALUES(6,6,'Victoria Luxford',1.0,'A case of (the filmmakers) had a character, but didnt quite know what to do with it. I think its quite a messy plot that doesnt always make that much sense A bit different with the horror theme, but nothing special.');
+INSERT INTO Review VALUES(7,7,'David Stratton',4.5,'This is not only a tremendously exciting space adventure... It''s also a rich and thoughtful meditation on time and space and gravity.');
+INSERT INTO Review VALUES(8,8,'Sara Michelle Fetters',3.75,'In the end, Muschietti''s film is a big, fat, gorgeously produced love letter to King''s epic novel.');
+INSERT INTO Review VALUES(9,9,'Chris Hewitt',4.0,'This is the finest DreamWorks Animation effort since the first Shrek');
+INSERT INTO Review VALUES(10,10,'Adam Kempenaar',4.5,'Once it switches over to us getting inside her head... I started seeing it more as Judy''s story than Scottie''s.');
+INSERT INTO Review VALUES(11,11,'Jeff Simon',4.0,'It''s a movie with dignity and surprises and before it has finished, it has acquired a good deal of power.');
+INSERT INTO Review VALUES(12,12,'Trace Thurman',5.0,'What else can be said about Hitch''s masterpiece? It''s a masterpiece!');
+INSERT INTO Review VALUES(13,13,'Patrick Cavanaugh',5.0,'Stanley Kubrick somehow manages to feel restrained and more ambitious than ever, delivering a harrowing and nightmarish case study in the impact of isolation and familial resentment.');
+INSERT INTO Review VALUES(14,14,'Peter Travers',4.5,'An uneven movie that nonetheless bristles with stinging wit and exerts a perverse fascination.');
+INSERT INTO Review VALUES(15,15,'Vartiainen',3.5,'I think the reason why I prefer this film over so many modern day Finnish comedies is the fact that while it contains the same kind of crude humour that relies on characters that act like exaggeratedly mentally handicapped children most of the time, the plot is bizarre enough to keep my interest. Modern Finnish comedies try to draw much of their humour from exaggerated real-life situations, whereas this is almost like an adventure film.');
+INSERT INTO Review VALUES(16,16,'djb75-1',3.0,'Kummelin Jackpot is a Finnish film starring Heikki Silvennoinen. Heikki plays Pertti ''Pera'' Järvelä a middle aged man, estranged from his wife and daughter, completely broke and a singer in a band that are striving to be mediocre. The band have the chance to create a a cassette of the their songs one of which is “I will stick to you like piles”.');
+INSERT INTO Review VALUES(17,17,'Nell Minow',4.0,'Fun movie, but may be too intense for younger kids.');
+INSERT INTO Review VALUES(18,18,'Joseph Garcia',4.0,'If it wasn''t apparent before, it''s super apparent now that Marvel Studios understands their characters better than anyone else does.');
+INSERT INTO Review VALUES(19,19,'Bob Fenster',5.0,'The best art takes the biggest chances, thereby losing people who can''t stretch with it. Forrest Gump is worth the effort.');
+INSERT INTO Review VALUES(20,20,'George Perry',4.0,'For much of the time, Hanks is on screen by himself, his only dialogue addressed to an inanimate ball. A lesser performer would have made it an unendurable ordeal.');
+INSERT INTO Review VALUES(21,21,'Donald Clarke',4.0,'This is what piracy is now really like. In truth, it was probably always like this.');
+INSERT INTO Review VALUES(22,22,'Marc Savlov',2.5,'As in Napoleon Dynamite, there are catchphrases galore, but precious few that stick with you past the theatre parking lot.');
+INSERT INTO Review VALUES(23,23,'Peter Bradshaw',4.0,'All of the film''s provocation and jaded sexual politics are flavoured with histrionic cynicism and disillusion.');
+INSERT INTO Review VALUES(24,24,'Allison Rose',4.5,'Kubrick had a way of making the audience become invested in the characters of his films and created some truly memorable ones.');
+INSERT INTO Review VALUES(25,25,'Larushka Ivan-Zadeh',4.0,'The film has roused censure for glorifying crime, with scant, awkwardly realised minutes paid to Belfort''s eventual comeuppance. But surely 71-year-old Scorsese, a one-time wannabe priest whose work is preoccupied with morality, did that deliberately?');
+INSERT INTO Review VALUES(26,26,'Tom Huddleston',5.0,'Damn close to perfect.');
+INSERT INTO Review VALUES(27,27,'Elvis Mitchell',3.0,'It''s rare, and kind of touching, really, to see a lushly financed studio spectacular work so hard to keep everyone''s attention. And with enough symbolism to keep online chat rooms busier than the day Babylon 5 was cancelled.');
+INSERT INTO Review VALUES(28,28,'Charlotte Davis',3.5,'Unknown Soldier does not sugar-coat the grind of this kind of warfare, nor the inevitable loss of life that comes with any war, but it also offers moments of respite, levity, and even joy.');
+INSERT INTO Review VALUES(29,29,'David Stratton',4.5,'With the talented Audrey Tautou in the leading role, Amelie is sheer delight, and will entrance everyone who sees it.');
+INSERT INTO Review VALUES(30,30,'Danny Leigh',5.0,'As the doomy burnish of Gordon Willis’s photography captures the darkened souls of the Corleones, the effect is flat-out mesmeric.');
 CREATE TABLE IF NOT EXISTS "Nationality" ( 
     nationality_id INTEGER PRIMARY KEY AUTOINCREMENT, 
     nationality TEXT 
@@ -1107,7 +1107,7 @@ INSERT INTO Award VALUES(416,'15th Grammy Awards - Best Original Score Written f
 INSERT INTO Award VALUES(417,'25th Writers Guild of America Awards - Best Drama Adapted from Another Medium');
 DELETE FROM sqlite_sequence;
 INSERT INTO sqlite_sequence VALUES('Movie',30);
-INSERT INTO sqlite_sequence VALUES('Reception',30);
+INSERT INTO sqlite_sequence VALUES('Review',30);
 INSERT INTO sqlite_sequence VALUES('Nationality',11);
 INSERT INTO sqlite_sequence VALUES('Actor',24);
 COMMIT;
